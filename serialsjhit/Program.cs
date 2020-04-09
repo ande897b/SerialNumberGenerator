@@ -1,20 +1,24 @@
 ﻿using System;
 
-namespace serialsjhit
+namespace Serials
 {
     class Program
     {
         static void Main(string[] args)
+
         {
+            // Gemmer 100 autogenerede Serialnumre til .txt
             using (System.IO.StreamWriter file =
-            new System.IO.StreamWriter(@"C:\Users\Ander\source\repos\serialsjhit\serialsjhit\SerialNumbers.txt"))
+            new System.IO.StreamWriter(@"C:\Users\Ander\source\repos\Serials\serialsjhit\SerialNumbers.txt"))
                 for (int i = 0; i < 100; i++)
             {
                     file.WriteLine(RandomSNKGenerator.GetSerialKeyAlphaNumaric(SNKeyLength.SN16));
             }
-           // Console.WriteLine(RandomSNKGenerator.GetSerialKeyAlphaNumaric(SNKeyLength.SN16));
+          
         }
     }
+
+    // Kode hapset fra en sød gut på nettet kaldet Carso Leong. Credits :http://carso-owen.blogspot.com/2007/02/custom-serial-number-generator-in-c-net.html
     public enum
 SNKeyLength
     {
@@ -99,10 +103,7 @@ SNKeyLength
 
             return newSerialNumber;
         }
-        ///
-
-        /// Generate serial key with only numaric
-        ///
+     
 
 
         public static string GetSerialKeyNumaric(SNKeyNumLength
